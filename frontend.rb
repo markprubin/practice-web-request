@@ -2,22 +2,39 @@ require "http"
 
 system "clear"
 
-puts "Choose an option:"
-puts "[1] Random Fortune"
-puts "[2] Lotto Numbers"
-puts "[3] Page Visit Counter"
+# response = HTTP.get("http://localhost:3000/product_path/:id")
+# products = response.parse["name"]
+# pp products
 
-input_option = gets.chomp
-if input_option == "1"
-  response = HTTP.get("http://localhost:3000/fortune_teller.json")
-  fortune = response.parse["your_fortune"]
-  puts fortune
-elsif input_option == "2"
-  response = HTTP.get("http://localhost:3000/lotto_gen.json")
-  numbers = response.parse["message"]
-  p numbers
-elsif input_option == "3"
-  response = HTTP.get("http://localhost:3000/counter_path.json"
-  count = response.parse["visits"]
-  p count
+puts "Welcome to the Landscaping Store. The items below are currently in stock:"
+puts "[1] Heavy Duty Wide Shovel"
+puts "[2] Electric Lawnmower"
+puts "[3] 18 in. Gravel Rake"
+puts "[4] Heavy Duty Work Gloves"
+
+input = gets.chomp
+
+if input == "1"
+  response = HTTP.get("http://localhost:3000/product_path/1")
+  product = response.parse["name"]
+  price = response.parse["price"]
+  puts "The #{product} costs $#{price}."
+end
+if input == "2"
+  response = HTTP.get("http://localhost:3000/product_path/2")
+  product = response.parse["name"]
+  price = response.parse["price"]
+  puts "The #{product} costs $#{price}."
+end
+if input == "3"
+  response = HTTP.get("http://localhost:3000/product_path/3")
+  product = response.parse["name"]
+  price = response.parse["price"]
+  puts "The #{product} costs $#{price}."
+end
+if input == "4"
+  response = HTTP.get("http://localhost:3000/product_path/4")
+  product = response.parse["name"]
+  price = response.parse["price"]
+  puts "The #{product} costs $#{price}."
 end
