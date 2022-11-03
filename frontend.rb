@@ -4,10 +4,6 @@ system "clear"
 
 # MOVE TO PRACTICE WEB REQUESTS
 
-# response = HTTP.get("http://localhost:3000/products")
-# products = response.parse[:json]
-# pp products
-
 puts "Welcome to the Landscaping Store. The items below are currently in stock:"
 puts "[1] Heavy Duty Wide Shovel"
 puts "[2] Electric Lawnmower"
@@ -36,4 +32,6 @@ elsif input == "4"
   product = response.parse["name"]
   price = response.parse["price"]
   puts "The #{product} costs $#{price}."
+else
+  puts "Invalid selection"
 end
