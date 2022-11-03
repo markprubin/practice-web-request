@@ -5,7 +5,8 @@ system "clear"
 # MOVE TO PRACTICE WEB REQUESTS
 
 # response = HTTP.get("http://localhost:3000/products")
-#   products = response.parse["name"]
+# products = response.parse[:json]
+# pp products
 
 puts "Welcome to the Landscaping Store. The items below are currently in stock:"
 puts "[1] Heavy Duty Wide Shovel"
@@ -20,20 +21,17 @@ if input == "1"
   product = response.parse["name"]
   price = response.parse["price"]
   puts "The #{product} costs $#{price}."
-end
-if input == "2"
+elsif input == "2"
   response = HTTP.get("http://localhost:3000/products/2")
   product = response.parse["name"]
   price = response.parse["price"]
   puts "The #{product} costs $#{price}."
-end
-if input == "3"
+elsif input == "3"
   response = HTTP.get("http://localhost:3000/products/3")
   product = response.parse["name"]
   price = response.parse["price"]
   puts "The #{product} costs $#{price}."
-end
-if input == "4"
+elsif input == "4"
   response = HTTP.get("http://localhost:3000/products/4")
   product = response.parse["name"]
   price = response.parse["price"]
