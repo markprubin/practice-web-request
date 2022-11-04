@@ -56,6 +56,8 @@ if input == "c"
   puts "Type out a description for the item."
   description = gets.chomp
 
+  response = HTTP.post(http://localhost:3000/products)
+
 
 
 # DELETE
